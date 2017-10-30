@@ -8,7 +8,7 @@ Contoh sederhana aplikasi Node JS
 
 ## Cara Setup di Local
 - Buat database bernama `social-commerce` di MySQL
-- Import file `social-commerce.sql` ke database tersebut
+- Import file `social-commerce_yyyy-mm-dd.sql` ke database tersebut
 - Pada file `./src/database.js` ubah kode ini sesuai user dan password MySQL di local
 ```javascript
 var sequelize = new Sequelize('social-commerce', 'your_user', 'your_password', {
