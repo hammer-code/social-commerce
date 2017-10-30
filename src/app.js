@@ -3,16 +3,20 @@ var database = require('./database');
 
 var app = express();
 
-app.set('view engine', 'pug')
+app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-app.get('/', async function (req, res) {
-  var products = await database.Product.findAll();
-
-  res.render('product', { title: 'Daftar Produk', products: products });
+app.get('/', function (req, res) {
+  database.Product.findAll()
+    .then(function (products) {
+      res.render('product', { title: 'Daftar Produk', products: products });
+    })
+    .catch(function (error) {
+      res.send(error);
+    });
 });
 
-app.get('/create', async function (req, res) {
+app.get('/create', function (req, res) {
   res.render('product-create', { title: 'Buat Postingan' });
 });
 
