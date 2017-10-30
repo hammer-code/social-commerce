@@ -9,7 +9,7 @@ app.set('views', __dirname + '/views');
 app.get('/', function (req, res) {
   database.Product.findAll()
     .then(function (products) {
-      res.render('product', { title: 'Daftar Produk', products: products });
+      res.render('product-list', { title: 'Daftar Produk', products: products });
     })
     .catch(function (error) {
       res.send(error);
