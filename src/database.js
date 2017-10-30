@@ -24,7 +24,18 @@ var User = sequelize.define('users', {
   updatedAt: Sequelize.DATE,
 });
 
+var Post = sequelize.define('posts', {
+  content: Sequelize.STRING,
+  productId: Sequelize.INTEGER,
+  price: Sequelize.INTEGER,
+  createdAt: Sequelize.DATE,
+  updatedAt: Sequelize.DATE,
+});
+
+Post.belongsTo(Product);
+
 module.exports = {
   Product: Product,
   User: User,
+  Post: Post,
 };
