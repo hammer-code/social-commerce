@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_PATH=. nodemon --exec \"node index.js\""
+    "dev": "cross-env NODE_PATH=. nodemon --exec \"node index.js\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cross-env": "^5.1.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "mysql2": "^1.4.2",
